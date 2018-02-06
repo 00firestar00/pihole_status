@@ -1,42 +1,64 @@
-	<!doctype html>
 <html>
-  <head>
-    <title>Pi Hole On/Off Extension</title>
-		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<link href="css/bootstrap-switch.min.css" rel="stylesheet" media="screen">
-	    <style type="text/css">
-	    	body {
-	        	min-width: 300px;
-				min-height: 150px;
-	            /* overflow: hidden; */
-	         }
-	    </style>		
-  </head>
-  <body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Pi-Hole</a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">On / Off</a></li>
-			</ul>
-			<ul class="nav navbar-nav">
-				<li ><a href="settings.html">Settings</a></li>
-			</ul>
-		</div>
-	</nav>  
-	<div class="container">
-		<form action="#" method="POST">
-			<input id="apiurl" name="apiurl" type="hidden" value="123">
-			Pi Hole status: <input id="status" type="checkbox" name="status" disabled>
-		</form>
-	</div>
-  </body>
-	<script src="js/jquery-2.0.3.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-switch.min.js"></script>
-    <script src="js/popup.js"></script>
-  
-</html>
 
+<head>
+    <title>Pi Hole On/Off Extension</title>
+    <link href="css/material.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style type="text/css">
+        body {
+            min-width: 400px;
+            min-height: 300px;
+        }
+
+        .mdl-switch-left__lable {
+            left: 0;
+        }
+
+        .mdl-switch-left {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Pi-Hole</span>
+                </nav>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--1-col"></div>
+                    <div class="mdl-cell mdl-cell--2-col">
+                        <form action="#" method="POST">
+                            <span class="mdl-switch__label mdl-switch-left__lable">Enabled</span>
+                            <label class="mdl-switch mdl-switch-left mdl-js-switch mdl-js-ripple-effect" for="piholeStatus">
+                                <input type="checkbox" id="piholeStatus" class="mdl-switch__input" checked>
+                            </label>
+                        </form>
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" value="dummy" id="apiURL">
+                                <label class="mdl-textfield__label" for="apiURL">Pi-Hole URL</label>
+                            </div>
+                        </form>
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" value="dummy" id="apiToken">
+                                <label class="mdl-textfield__label" for="apiToken">API Token</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="js/popup.js"></script>
+<script src="js/material.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+
+</html>
